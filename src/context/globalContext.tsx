@@ -5,16 +5,27 @@ interface Props {
   children: ReactNode;
 }
 
+interface GlobalContextValue {
+  videoId: string;
+  setVideoId: (preValue: string) => void;
+  getTrailerId: (id: number | string) => void;
+  closeModal: () => void;
+  isModalOpen: boolean;
+  showSidebar: boolean;
+  setShowSidebar: (prevValue: boolean) => void;
+  setIsModalOpen: (value: boolean) => void;
+}
+
 //Create context for global state and functions
-export const GlobalContext = createContext({
+export const GlobalContext = createContext<GlobalContextValue>({
   videoId: "",
-  setVideoId: (prevValue: string) => {},
-  getTrailerId: (id: number | string) => {},
+  setVideoId: () => {},
+  getTrailerId: () => {},
   closeModal: () => {},
   isModalOpen: false,
   showSidebar: false,
-  setShowSidebar: (prevValue: boolean) => {},
-  setIsModalOpen: (value: boolean) => {},
+  setShowSidebar: () => {},
+  setIsModalOpen: () => {},
 });
 
 //A wrapper component that provides the global context values to its child components

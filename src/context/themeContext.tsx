@@ -11,13 +11,21 @@ interface Props {
   children: ReactNode;
 }
 
+interface ThemeContextValue {
+  setShowThemeOptions: (prev: boolean) => void;
+  showThemeOptions: boolean;
+  openMenu: () => void;
+  closeMenu: () => void;
+  setTheme: (newTheme: string) => void;
+  theme: string;
+}
 //Create context for theme
-export const ThemeContext = createContext({
-  setShowThemeOptions: (prev: boolean) => {},
+export const ThemeContext = createContext<ThemeContextValue>({
+  setShowThemeOptions: () => {},
   showThemeOptions: false,
   openMenu: () => {},
   closeMenu: () => {},
-  setTheme: (newTheme: string) => {},
+  setTheme: () => {},
   theme: "",
 });
 
