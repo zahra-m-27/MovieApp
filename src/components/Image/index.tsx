@@ -7,7 +7,7 @@ interface ImageProps {
   className: string;
   alt: string;
   width: string | number;
-  height?: string | number;
+  height: string | number;
   effect?: "zoomIn";
 }
 
@@ -24,8 +24,6 @@ const Image = ({ src, className, width, alt, height, effect }: ImageProps) => {
       style={{ width: width, height: height }}
       src={src}
       alt={alt}
-      // height={`${height} !important`}
-      // width={width}
       className={conditonalClassName(
         "transition-all duration-300 ease-in",
         className,
