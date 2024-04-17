@@ -9,7 +9,7 @@ import {
   VideoModal,
   ScrollToTop,
   Loader,
-} from "./common";
+} from "./components";
 
 //Dynamically import components. Ensures that only the components needed for current route are loaded
 const Catalog = lazy(() => import("./pages/Catalog"));

@@ -3,12 +3,13 @@ import { motion } from "framer-motion";
 import { useParams } from "react-router-dom";
 import { useMotion } from "../../hooks/useMotion";
 import { useGetShowQuery } from "../../services/tmdb";
-import { Error, Loader, Poster, Section } from "../../common";
+import { Error, Loader, Poster, Section } from "../../components";
 import { mainHeading, maxWidth, paragraph } from "../../constants/styles";
 import { conditonalClassName } from "../../utils/helper";
 import Genre from "./components/Genre";
 import Casts from "./components/Casts";
 import Videos from "./components/Videos";
+import TimeLang from "./components/TimeLang";
 
 //fetch and display detailed information about a movie or a series
 const Detail = () => {
@@ -57,6 +58,9 @@ const Detail = () => {
     genres,
     videos,
     credits,
+    release_date,
+    first_air_date,
+    original_language,
   } = movie;
 
   const backgroundStyle = {
@@ -111,6 +115,24 @@ const Detail = () => {
                 {!show ? "show more" : "show less"}
               </button>
             </motion.p>
+
+            <motion.ul
+              variants={fadeDown}
+              className="flex flex-row items-center  sm:gap-[40px] xs:gap-7 gap-[30px] flex-wrap"
+            >
+              <TimeLang
+                name={first_air_date ? "first air year" : "release year"}
+                value={
+                  first_air_date
+                    ? first_air_date.substring(0, 4)
+                    : release_date.substring(0, 4)
+                }
+              />
+              <TimeLang
+                name="original language"
+                value={original_language.substring(0, 4)}
+              />
+            </motion.ul>
 
             <Casts casts={credits?.cast || []} />
           </motion.div>

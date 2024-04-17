@@ -11,7 +11,7 @@ import {
   paragraph,
   watchBtn,
 } from "../../../constants/styles";
-import { Poster } from "../../../common";
+import { Poster } from "../../../components";
 
 interface SlideProps {
   movie: MoviesType;

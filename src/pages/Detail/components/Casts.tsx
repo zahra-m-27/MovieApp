@@ -1,7 +1,7 @@
 import { useMediaQuery } from "usehooks-ts";
 import { motion } from "framer-motion";
-import Image from "../../../common/Image";
 import { memo } from "react";
+import { Image } from "../../../components";
 
 interface CastsProps {
   casts: {

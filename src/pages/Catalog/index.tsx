@@ -1,12 +1,12 @@
 import { useState, useEffect } from "react";
 import { useParams, useSearchParams } from "react-router-dom";
-import CatalogHeader from "./components/CatalogHeader";
-import Search from "./components/Search";
 import { MoviesType } from "../../types";
 import { useGetShowsQuery } from "../../services/tmdb";
 import { smallMaxWidth } from "../../constants/styles";
-import { Error, MovieCard, SkelatonLoader } from "../../common";
+import { Error, MovieCard, SkelatonLoader } from "../../components";
 import { getErrorMessage } from "../../utils/helper";
+import CatalogHeader from "./components/CatalogHeader";
+import Search from "./components/Search";
 
 //displays a list of movies based on the user's search query and selected category
 const Catalog = () => {

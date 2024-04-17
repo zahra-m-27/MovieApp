@@ -1,4 +1,4 @@
-import { Error, Loader, Section } from "../../common";
+import { Error, Loader, Section } from "../../components";
 import { sections } from "../../constants";
 import { useGetShowsQuery } from "../../services/tmdb";
 import { maxWidth } from "../../constants/styles";
