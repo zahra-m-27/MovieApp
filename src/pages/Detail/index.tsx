@@ -60,7 +60,7 @@ const Detail = () => {
     credits,
     release_date,
     first_air_date,
-    original_language,
+    spoken_languages,
   } = movie;
 
   const backgroundStyle = {
@@ -121,7 +121,7 @@ const Detail = () => {
               className="flex flex-row items-center  sm:gap-[40px] xs:gap-7 gap-[30px] flex-wrap"
             >
               <TimeLang
-                name={first_air_date ? "first air year" : "release year"}
+                name={first_air_date ? "First air year" : "Release year"}
                 value={
                   first_air_date
                     ? first_air_date.substring(0, 4)
@@ -129,8 +129,8 @@ const Detail = () => {
                 }
               />
               <TimeLang
-                name="original language"
-                value={original_language.substring(0, 4)}
+                name="Language"
+                value={spoken_languages[0].english_name}
               />
             </motion.ul>
 
